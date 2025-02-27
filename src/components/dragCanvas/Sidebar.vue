@@ -1,5 +1,5 @@
-<script setup>
-import useDragAndDrop from './useDnD'
+<script setup lang="ts">
+import useDragAndDrop from './useDnD.ts'
 
 const { onDragStart } = useDragAndDrop()
 </script>
@@ -14,6 +14,9 @@ const { onDragStart } = useDragAndDrop()
       <div class="vue-flow__node-default" :draggable="true" @dragstart="onDragStart($event, 'default')">Default Node</div>
 
       <div class="vue-flow__node-output" :draggable="true" @dragstart="onDragStart($event, 'output')">Output Node</div>
+
+      <div class="vue-flow__node-output" :draggable="true" @dragstart="onDragStart($event, 'custom')">Custom Node</div>
+
     </div>
   </aside>
 </template>

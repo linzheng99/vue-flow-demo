@@ -92,6 +92,7 @@ export default function useDragAndDrop() {
       data: { label: nodeId },
     }
 
+
     /**
      * Align node position after drop, so it's centered to the mouse
      *
@@ -104,6 +105,8 @@ export default function useDragAndDrop() {
 
       off()
     })
+
+    console.log(newNode)
 
     addNodes(newNode)
   }
