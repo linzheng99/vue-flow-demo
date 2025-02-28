@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Position, Handle } from '@vue-flow/core'
+import { Position, Handle, type NodeProps } from '@vue-flow/core'
 
-interface Props {
+interface Props extends NodeProps {
   data: {
     label: string
   }

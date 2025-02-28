@@ -1,53 +1,20 @@
 <script setup lang="ts">
-import { EdgeLabelRenderer, getBezierPath, getSmoothStepPath, useVueFlow } from '@vue-flow/core'
-import { computed, ref } from 'vue'
+import { EdgeLabelRenderer, getBezierPath, getSmoothStepPath, Position } from '@vue-flow/core'
+import { computed } from 'vue'
 
-const props = defineProps({
-  id: {
-    type: String,
-    required: true
-  },
-  sourceX: {
-    type: Number,
-    required: true
-  },
-  sourceY: {
-    type: Number,
-    required: true
-  },
-  targetX: {
-    type: Number,
-    required: true
-  },
-  targetY: {
-    type: Number,
-    required: true
-  },
-  sourcePosition: {
-    type: String,
-    required: true
-  },
-  targetPosition: {
-    type: String,
-    required: true
-  },
-  markerEnd: {
-    type: String,
-    required: false
-  },
-  style: {
-    type: Object,
-    required: false
-  },
-  color: {
-    type: String,
-    required: '#6f3381'
-  },
-  pathType: {
-    type: String,
-    required: 'smoothstep'
-  }
-})
+const props = defineProps<{
+  id: string
+  sourceX: number
+  sourceY: number
+  targetX: number
+  targetY: number
+  sourcePosition: Position
+  targetPosition: Position
+  markerEnd?: string
+  style?: Record<string, string>
+  color?: string
+  pathType?: string
+}>()
 
 function changeEdge(id: string) {
   console.log(id)
