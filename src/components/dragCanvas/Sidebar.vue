@@ -2,6 +2,7 @@
 import useDragAndDrop from './hooks/useDnD.ts'
 import NodeWithToggle from './nodes/nodeWithToggle/darg.vue'
 import NodeWithImage from './nodes/nodeWithImage/drag.vue'
+import NodeWithInterface from './nodes/nodeWithInterface/drag.vue'
 
 const { onDragStart } = useDragAndDrop()
 </script>
@@ -19,6 +20,7 @@ const { onDragStart } = useDragAndDrop()
       <div class="vue-flow__node-output" :draggable="true" @dragstart="onDragStart($event, 'custom')">Custom Node</div>
       <NodeWithToggle />
       <NodeWithImage />
+      <NodeWithInterface />
     </div>
   </aside>
 </template>

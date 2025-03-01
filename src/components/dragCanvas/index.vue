@@ -46,6 +46,9 @@
       <template #node-image="imageNodeProps">
         <NodeWithImage v-bind="imageNodeProps" />
       </template>
+      <template #node-interface="interfaceNodeProps">
+        <NodeWithInterface v-bind="interfaceNodeProps" />
+      </template>
       <template #edge-button="buttonEdgeProps">
         <EdgeWithButton
           :id="buttonEdgeProps.id"
@@ -94,6 +97,7 @@ import CustomNode from './nodes/CustomNode.vue'
 import EdgeWithButton from './edges/EdgeWithButton.vue'
 import NodeWithToggle from './nodes/nodeWithToggle/index.vue'
 import NodeWithImage from './nodes/nodeWithImage/index.vue'
+import NodeWithInterface from './nodes/nodeWithInterface/index.vue'
 import EdgeWithFlowAnimated from './edges/EdgeWithFlowAnimated.vue'
 import EdgeWithFlowVoltage from './edges/EdgeWithFlowVoltage.vue'
 import EdgeWithFlowWater from './edges/EdgeWithFlowWater.vue'
