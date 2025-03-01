@@ -49,6 +49,9 @@
       <template #node-interface="interfaceNodeProps">
         <NodeWithInterface v-bind="interfaceNodeProps" />
       </template>
+      <template #node-condition="conditionNodeProps">
+        <NodeWithCondition v-bind="conditionNodeProps" />
+      </template>
       <template #edge-button="buttonEdgeProps">
         <EdgeWithButton
           :id="buttonEdgeProps.id"
@@ -98,6 +101,7 @@ import EdgeWithButton from './edges/EdgeWithButton.vue'
 import NodeWithToggle from './nodes/nodeWithToggle/index.vue'
 import NodeWithImage from './nodes/nodeWithImage/index.vue'
 import NodeWithInterface from './nodes/nodeWithInterface/index.vue'
+import NodeWithCondition from './nodes/nodeWithCondition/index.vue'
 import EdgeWithFlowAnimated from './edges/EdgeWithFlowAnimated.vue'
 import EdgeWithFlowVoltage from './edges/EdgeWithFlowVoltage.vue'
 import EdgeWithFlowWater from './edges/EdgeWithFlowWater.vue'
@@ -113,6 +117,8 @@ const { onDragOver, onDrop, onDragLeave, isDragOver } = useDragAndDrop()
 
 const nodes = ref(commonNodes)
 const edges = ref(commonEdges)
+// const nodes = ref<Node[]>([])
+// const edges = ref<Edge[]>([])
 const edgeColors = ref<Record<string, string>>({})
 const edgePathType = ref<Record<string, string>>({})
 const selectedNode = ref<Node | null>(null)

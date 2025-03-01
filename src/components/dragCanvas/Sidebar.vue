@@ -3,6 +3,7 @@ import useDragAndDrop from './hooks/useDnD.ts'
 import NodeWithToggle from './nodes/nodeWithToggle/darg.vue'
 import NodeWithImage from './nodes/nodeWithImage/drag.vue'
 import NodeWithInterface from './nodes/nodeWithInterface/drag.vue'
+import NodeWithCondition from './nodes/nodeWithCondition/drag.vue'
 
 const { onDragStart } = useDragAndDrop()
 </script>
@@ -21,6 +22,7 @@ const { onDragStart } = useDragAndDrop()
       <NodeWithToggle />
       <NodeWithImage />
       <NodeWithInterface />
+      <NodeWithCondition />
     </div>
   </aside>
 </template>
