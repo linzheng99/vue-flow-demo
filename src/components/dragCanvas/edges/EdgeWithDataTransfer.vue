@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { EdgeLabelRenderer, getBezierPath, Position, useVueFlow } from '@vue-flow/core'
+import { EdgeLabelRenderer, getSmoothStepPath, Position, useVueFlow } from '@vue-flow/core'
 import { computed } from 'vue'
 
 const props = defineProps<{
@@ -15,7 +15,7 @@ const props = defineProps<{
 
 const { removeEdges } = useVueFlow()
 
-const path = computed(() => getBezierPath(props))
+const path = computed(() => getSmoothStepPath(props))
 </script>
 
 <template>

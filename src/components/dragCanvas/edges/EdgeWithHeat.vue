@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { EdgeLabelRenderer, getBezierPath, Position, useVueFlow } from '@vue-flow/core'
+import { EdgeLabelRenderer, getStraightPath, Position, useVueFlow } from '@vue-flow/core'
 import { computed } from 'vue'
 
 const props = defineProps<{
@@ -15,7 +15,7 @@ const props = defineProps<{
 
 const { removeEdges } = useVueFlow()
 
-const path = computed(() => getBezierPath(props))
+const path = computed(() => getStraightPath(props))
 </script>
 
 <template>
@@ -28,7 +28,7 @@ const path = computed(() => getBezierPath(props))
       :stroke-width="5"
       :d="path[0]"
     />
-    
+
     <!-- Heat flow -->
     <path
       class="vue-flow__connection heat-flow"
@@ -38,7 +38,7 @@ const path = computed(() => getBezierPath(props))
       :d="path[0]"
       filter="url(#heatGlow)"
     />
-    
+
     <!-- Heat waves -->
     <path
       class="vue-flow__connection heat-waves"
@@ -47,21 +47,36 @@ const path = computed(() => getBezierPath(props))
       :stroke-width="1.5"
       :d="path[0]"
     />
-    
+
     <!-- Gradients and filters -->
     <defs>
       <linearGradient id="heatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stop-color="#ff3300">
-          <animate attributeName="stop-color" values="#ff3300;#ffcc00;#ff3300" dur="2s" repeatCount="indefinite" />
+          <animate
+            attributeName="stop-color"
+            values="#ff3300;#ffcc00;#ff3300"
+            dur="2s"
+            repeatCount="indefinite"
+          />
         </stop>
         <stop offset="50%" stop-color="#ffcc00">
-          <animate attributeName="stop-color" values="#ffcc00;#ff3300;#ffcc00" dur="2s" repeatCount="indefinite" />
+          <animate
+            attributeName="stop-color"
+            values="#ffcc00;#ff3300;#ffcc00"
+            dur="2s"
+            repeatCount="indefinite"
+          />
         </stop>
         <stop offset="100%" stop-color="#ff3300">
-          <animate attributeName="stop-color" values="#ff3300;#ffcc00;#ff3300" dur="2s" repeatCount="indefinite" />
+          <animate
+            attributeName="stop-color"
+            values="#ff3300;#ffcc00;#ff3300"
+            dur="2s"
+            repeatCount="indefinite"
+          />
         </stop>
       </linearGradient>
-      
+
       <filter id="heatGlow" x="-20%" y="-20%" width="140%" height="140%">
         <feGaussianBlur stdDeviation="2" result="blur" />
         <feComposite operator="over" in="SourceGraphic" in2="blur" />

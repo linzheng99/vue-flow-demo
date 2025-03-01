@@ -2,9 +2,9 @@ import { MarkerType, type Edge, type Node } from "@vue-flow/core";
 import { ref } from "vue";
 
 export const commonNodes = ref<Node[]>([
-  { id: '1', type: 'input', label: 'Start', position: { x: 50, y: 0 }, style: { borderColor: '#10b981' } },
+  { id: '1', type: 'input', label: 'Start', position: { x: 50, y: 0 }, style: { borderColor: '#10b981' }, class: 'custom-node' },
   { id: '2', label: 'Node 2', position: { x: 150, y: 100 } },
-  { id: '2a', label: 'Node 2a', position: { x: 0, y: 180 } },
+  { id: '2a', label: 'Node 2a', type: 'custom', position: { x: 0, y: 180 } },
   { id: '3', label: 'Node 3', position: { x: 250, y: 200 } },
   { id: '4', label: 'Node 4', position: { x: 400, y: 300 } },
   { id: '3a', label: 'Node 3a', position: { x: 175, y: 300 } },
@@ -33,6 +33,7 @@ export const commonEdges = ref<Edge[]>([
     source: '5',
     target: '7',
     label: 'label with bg',
+    animated: true,
     labelBgPadding: [8, 4],
     labelBgBorderRadius: 4,
     labelBgStyle: { fill: '#FFCC00', color: '#fff', fillOpacity: 0.7 },
@@ -42,7 +43,16 @@ export const commonEdges = ref<Edge[]>([
     id: 'e4-9',
     source: '4',
     target: '9',
-    type: 'custom',
-    data: { text: 'styled custom edge label' },
+    type: 'default',
+    animated: true,
+    style: { stroke: 'red' },
+  },
+  {
+    id: 'e5-8',
+    source: '5',
+    target: '8',
+    type: 'default',
+    animated: true,
+    style: { stroke: '#10b981' },
   },
 ])
