@@ -1,7 +1,7 @@
 - [ ] 自定义节点
   - [x] 节点中的数据 通过onDrag传入schemas（定义Json）
   - [ ] node toolbar
-  - [x] node可以拿到谁和自己连线，还有target和source（useNodeConnections hook）
+  - [ ] node可以拿到谁和自己连线，还有target和source（useNodeConnections hook）
 - [ ] 节点数据
   - [x] 获取全部节点 {getNodes} = useFlow()
   - [x] 单个节点数据 @node-click="onNodeClick"
@@ -21,7 +21,9 @@
   - [ ] edge marker
   - [x] 固定连线规则
 - [x] 背景样式 Background
-- [ ] 一个组的node
+- [ ] 一个组的node（Nested Nodes）
+- [ ] 点击出现弹窗
+- [ ] 放大出现更多节点
 
 # 设计
 - 一个数据store
@@ -36,7 +38,10 @@
 # Demo
 绘制出来一个nodes + edges，用json 导出来 做默认
 - [ ] 实现node之上的交互
-  - [x] 自定义2个node（node上要有开关，交互）
+  - [x] 自定义2个node（node上要有开关，交互, 改变颜色等）
   - [x] 改变本node相关的edge属性(通过store去改变)
+
 - [ ] 罗列普通的，罗列自定义的
-- [ ] 
+
+- [ ] 点击出现弹窗
+- [ ] 放大出现更多节点

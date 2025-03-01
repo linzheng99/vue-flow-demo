@@ -115,10 +115,10 @@ const { onConnect, addEdges, setEdges, getEdges } = useVueFlow()
 
 const { onDragOver, onDrop, onDragLeave, isDragOver } = useDragAndDrop()
 
-const nodes = ref(commonNodes)
-const edges = ref(commonEdges)
-// const nodes = ref<Node[]>([])
-// const edges = ref<Edge[]>([])
+// const nodes = ref(commonNodes)
+// const edges = ref(commonEdges)
+const nodes = ref<Node[]>([])
+const edges = ref<Edge[]>([])
 const edgeColors = ref<Record<string, string>>({})
 const edgePathType = ref<Record<string, string>>({})
 const selectedNode = ref<Node | null>(null)
@@ -167,5 +167,10 @@ function changeNode(nodeMouseEvent: NodeMouseEvent) {
   console.log(nodeMouseEvent)
 }
 
-onConnect(addEdges)
+onConnect((params) => {
+  return addEdges({
+    ...params,
+    type: 'smoothstep'
+  })
+})
 </script>
