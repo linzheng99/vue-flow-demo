@@ -40,6 +40,9 @@
       <template #node-custom="customNodeProps">
         <CustomNode v-bind="customNodeProps" />
       </template>
+      <template #node-toggle="toggleNodeProps">
+        <NodeWithToggle v-bind="toggleNodeProps" />
+      </template>
       <template #edge-button="buttonEdgeProps">
         <EdgeWithButton
           :id="buttonEdgeProps.id"
@@ -86,6 +89,7 @@ import Sidebar from './Sidebar.vue'
 import useDragAndDrop from './hooks/useDnD.ts'
 import CustomNode from './nodes/CustomNode.vue'
 import EdgeWithButton from './edges/EdgeWithButton.vue'
+import NodeWithToggle from './nodes/nodeWithToggle/index.vue'
 import EdgeWithFlowAnimated from './edges/EdgeWithFlowAnimated.vue'
 import EdgeWithFlowVoltage from './edges/EdgeWithFlowVoltage.vue'
 import EdgeWithFlowWater from './edges/EdgeWithFlowWater.vue'
