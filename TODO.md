@@ -1,7 +1,7 @@
 - [ ] 自定义节点
   - [x] 节点中的数据 通过onDrag传入schemas（定义Json）
   - [ ] node toolbar
-  - [ ] node可以拿到谁和自己连线，还有target和source（useNodeConnections hook）
+  - [x] node可以拿到谁和自己连线，还有target和source（useNodeConnections hook）
 - [ ] 节点数据
   - [x] 获取全部节点 {getNodes} = useFlow()
   - [x] 单个节点数据 @node-click="onNodeClick"

@@ -52,6 +52,12 @@
       <template #node-condition="conditionNodeProps">
         <NodeWithCondition v-bind="conditionNodeProps" />
       </template>
+      <template #node-logic="logicNodeProps">
+        <NodeWithLogic v-bind="logicNodeProps" />
+      </template>
+      <template #node-event="eventNodeProps">
+        <NodeWithEvent v-bind="eventNodeProps" />
+      </template>
       <template #edge-button="buttonEdgeProps">
         <EdgeWithButton
           :id="buttonEdgeProps.id"
@@ -98,6 +104,8 @@ import Sidebar from './Sidebar.vue'
 import useDragAndDrop from './hooks/useDnD.ts'
 import CustomNode from './nodes/CustomNode.vue'
 import EdgeWithButton from './edges/EdgeWithButton.vue'
+import NodeWithLogic from './nodes/nodeWithLogic/index.vue'
+import NodeWithEvent from './nodes/nodeWithEvent/index.vue'
 import NodeWithToggle from './nodes/nodeWithToggle/index.vue'
 import NodeWithImage from './nodes/nodeWithImage/index.vue'
 import NodeWithInterface from './nodes/nodeWithInterface/index.vue'
